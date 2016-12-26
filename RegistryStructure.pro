@@ -11,14 +11,6 @@ TEMPLATE = lib
 
 DEFINES += REGISTRYSTRUCTURE_LIBRARY
 
-unix {
-    target.path = /usr/local/lib
-    header_files.path = /usr/local/include/RegistryStructure
-    header_files.files = $$HEADERS
-    INSTALLS += header_files
-    INSTALLS += target
-}
-
 VPATH += ./src
 INCLUDEPATH += ./inc
 INCLUDEPATH += ./inc/Filetypes
@@ -51,3 +43,14 @@ SOURCES += \
     src/Seeker.cpp \
     src/Unserialize.cpp \
     src/Tokenizer.c
+
+unix {
+    target.path = /usr/local/lib
+    header_files1.path = /usr/local/include/RegistryStructure
+    header_files1.files = ./inc/*
+    header_files2.path = /usr/local/include/RegistryStructure/Filetypes
+    header_files2.files = ./inc/Filetypes/*
+    INSTALLS += target
+    INSTALLS += header_files1
+    INSTALLS += header_files2
+}
