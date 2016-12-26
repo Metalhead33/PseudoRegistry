@@ -13,7 +13,7 @@ DEFINES += REGISTRYSTRUCTURE_LIBRARY
 
 unix {
     target.path = /usr/local/lib
-    header_files.path = /usr/local/include
+    header_files.path = /usr/local/include/RegistryStructure
     header_files.files = $$HEADERS
     INSTALLS += header_files
     INSTALLS += target
