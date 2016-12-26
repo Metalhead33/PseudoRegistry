@@ -29,6 +29,8 @@ public:
 	void RemoveChild(std::string name);
 	void RemoveChild(Element* elem);
 	void AddChild(Element* elem);
+    size_t GetNumChildren() const { return children.size(); }
+    ElementContainer* GetContainer() { return &children; }
 	
 	Directory(std::string name,Directory* parent);
 	~Directory();
