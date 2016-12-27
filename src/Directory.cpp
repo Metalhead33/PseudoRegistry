@@ -76,6 +76,14 @@ ElementIterator Directory::GetIElementByAddr(Element* elem)
 	}
 	throw -1;
 }
+ElementIterator Directory::GetIElementByRow(int row)
+{
+    if(children.size() < row) throw -1;
+    ElementIterator it;
+    int i;
+    for(it=children.begin(), i = 0;it != children.end() && i < row;++it,++i);
+    return it;
+}
 
 Element* Directory::GetPElementByName(std::string name)
 {
@@ -94,6 +102,15 @@ Element* Directory::GetPElementByAddr(Element* elem)
 	{
 		return 0;
 	}
+}
+Element* Directory::GetPElementByRow(int row)
+{
+    try {
+    return *(GetIElementByRow(row));
+    } catch(int i)
+    {
+        return 0;
+    }
 }
 
 // HIDDEN FUNCTIONS NEVER TO BE USED

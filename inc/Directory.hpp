@@ -24,8 +24,10 @@ public:
 	bool IsDirectory() const { return true; }
 	ElementIterator GetIElementByName(std::string name);
 	ElementIterator GetIElementByAddr(Element* elem);
+    ElementIterator GetIElementByRow(int row);
 	Element* GetPElementByName(std::string name);
 	Element* GetPElementByAddr(Element* elem);
+    Element* GetPElementByRow(int row);
 	void RemoveChild(std::string name);
 	void RemoveChild(Element* elem);
 	void AddChild(Element* elem);
