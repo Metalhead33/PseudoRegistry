@@ -49,6 +49,7 @@ Directory::~Directory()
 	for(it=children.begin();it != children.end();++it)
 	{
 		(*it)->__SetParent(0);
+        delete *it;
 	}
 }
 
